@@ -1,7 +1,6 @@
 -- ============================================
 -- DATA LOADING SCRIPT (RAW → DATABASE)
 -- ============================================
--- Author: Meraj Sheikh
 -- Description:
 -- This script loads raw CSV files into MySQL tables.
 -- Ensure correct file paths before execution.
