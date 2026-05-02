@@ -1,10 +1,17 @@
-# Olist E-Commerce Data Analysis (SQL Project)
+# 🛒 Olist E-Commerce Data Analysis (SQL Project)
 
-## Overview
+> Learning Project | Practicing real-world SQL on a Brazilian e-commerce dataset  
+> Status: Completed | Level: Beginner → Intermediate SQL
 
-This project analyzes a real-world Brazilian e-commerce dataset using SQL to uncover actionable business insights.
+---
 
-It simulates the workflow of a data analyst in an e-commerce company — from raw data ingestion to business reporting.
+## About This Project
+
+Hi! I'm Neha Mahawar, a QA Engineer actively transitioning into Data Science & Data Analytics.
+
+This is my first end-to-end SQL project where I analyzed a real-world e-commerce dataset to uncover actionable business insights. It helped me practice writing analytical SQL queries, working with relational databases, and thinking like a data analyst.
+
+I chose this dataset because it's messy, realistic, and multi-table — exactly the kind of data a real analyst would work with.
 
 ---
 
@@ -12,136 +19,91 @@ It simulates the workflow of a data analyst in an e-commerce company — from ra
 
 E-commerce businesses often face challenges such as:
 
-* Low customer retention
-* Delivery inefficiencies
-* Uneven seller performance
+- Low customer retention
+- Delivery inefficiencies
+- Uneven seller performance
 
-This project answers:
+ This project tries to answer:
 
-* Why are customers not returning?
-* What drives customer satisfaction?
-* Which sellers generate the most revenue?
-
----
+- Why are customers not returning?
+- What drives customer satisfaction?
+- Which sellers generate the most revenue?
 
 ## Tech Stack
 
-* SQL (MySQL)
-* Data Cleaning and Transformation
-* Analytical SQL (CTEs, Window Functions)
-* Database Design (Keys, Relationships, Indexing)
-
----
+| Tool | Usage |
+| SQL (MySQL) | Primary analysis language |
+| Data Cleaning | Handling NULLs, type fixes, deduplication |
+| Analytical SQL | CTEs, Window Functions, Aggregations |
+| Database Design| Keys, Relationships, Indexing |
 
 ## Project Structure
-
-```id="y4x95t"
-olist-ecommerce-sql-analysis/
+olist-ecommerce_SQL_Project/
 │
 ├── sql/
 │   ├── 01_schema.sql          → Raw table structures
 │   ├── 02_data_loading.sql    → Data ingestion
 │   ├── 03_data_cleaning.sql   → Data transformation
-│   ├── 04_analysis.sql        → Business insights
+│   └── 04_analysis.sql        → Business insights queries
 │
 ├── insights/
-│   └── business_insights.md
+│   └── business_insights.md   → Summary of findings
 │
-├── README.md
-```
+└── README.md                  → You are here!
 
----
+## My Workflow (Step-by-Step)
 
-## Workflow
+## Step 1 — Data Ingestion
+- Loaded raw CSV files into MySQL
+- Maintained raw structure for flexibility and reproducibility
 
-### 1. Data Ingestion
+### Step 2 — Data Cleaning (this was the hardest part for me!)
+- Handled missing values using `NULLIF()`
+- Preserved meaningful NULLs (e.g., orders that were never delivered)
+- Fixed data type inconsistencies across date and numeric columns
+- Verified referential integrity across joined tables
 
-* Loaded raw CSV files into MySQL
-* Maintained raw structure for flexibility
+## Step 3 — Data Transformation
+- Created clean, structured tables from raw data
+- Aggregated geolocation data by state/city
+- Standardized product category names and seller data
 
-### 2. Data Cleaning
+## Step 4 — Data Analysis
+- Customer segmentation by purchase behaviour
+- Seller performance ranking using window functions
+- Delivery time impact on review scores
+- Monthly revenue trend analysis
 
-* Handled missing values using `NULLIF()`
-* Preserved meaningful NULLs (e.g., undelivered orders)
-* Fixed data types and inconsistencies
-* Ensured referential integrity
+## Key Insights I Found
 
-### 3. Data Transformation
+##  Customer Retention
+1.Only ~3% of customers made a repeat purchase
+This was surprising to me. It means the business is almost entirely dependent on new customer acquisition — a very costly strategy. Retention campaigns could significantly improve profitability.
 
-* Created structured tables from raw data
-* Aggregated geolocation data
-* Cleaned and standardized product and seller data
+## Customer Lifetime Value
+2.Loyal customers spend approximately 4× more than one-time buyers
+This reinforced why retention matters more than just acquisition volume.
 
-### 4. Data Analysis
+## Delivery Impact on Ratings
+3. Faster delivery = higher review scores — consistently
+I found a clear negative correlation between delivery delay and customer rating. This was my favourite insight — easy to visualise and immediately actionable for logistics teams.
 
-* Customer segmentation
-* Seller performance ranking
-* Delivery impact analysis
-* Revenue trend analysis
+## Seller Contribution (80/20 Pattern)
+4.Top sellers drive a disproportionate share of total revenue
+Classic Pareto distribution. A small % of sellers account for the majority of GMV. Supporting top sellers better could meaningfully move revenue numbers.
 
----
+## SQL Concepts I Practiced
 
-## Key Insights
+- ✅ Common Table Expressions (CTEs)
+- ✅ Window Functions — `RANK()`, `NTILE()`, `LAG()`
+- ✅ Multi-table JOINs (INNER, LEFT)
+- ✅ Aggregate functions — `SUM`, `AVG`, `COUNT`, `GROUP BY`
+- ✅ Data Cleaning — `NULLIF()`, `COALESCE()`, `CAST()`
+- ✅ Primary Keys, Foreign Keys, Indexing
 
-### Customer Retention
+## What I Learned
 
-* Only ~3% repeat customers
-  Indicates a strong retention problem
-
----
-
-### Customer Lifetime Value
-
-* Loyal customers spend approximately 4x more
-  Retention is more valuable than acquisition
-
----
-
-### Delivery Impact
-
-* Faster delivery leads to higher ratings
-  Delivery speed is critical for satisfaction
-
----
-
-### Seller Contribution
-
-* Revenue is concentrated among top sellers
-  Seller performance varies significantly
-
----
-
-## Advanced SQL Concepts Used
-
-* Common Table Expressions (CTEs)
-* Window Functions (RANK, NTILE, LAG)
-* Joins and Aggregations
-* Data Cleaning Techniques
-* Primary and Foreign Keys
-
----
-
-## Business Impact
-
-This project demonstrates how SQL can be used to:
-
-* Identify revenue drivers
-* Improve customer retention strategies
-* Optimize logistics and delivery
-* Support data-driven decision-making
-
----
-
-## Future Improvements
-
-* Build interactive dashboards using Power BI or Tableau
-* Add predictive models (churn, delivery delay)
-* Automate pipeline using ETL tools
-
----
-
-## Author
-
-Meraj Sheikh
-Data Science and Analytics Enthusiast
-Skilled in SQL, Python, Power BI, and Machine Learning
+This project taught me more than just SQL syntax. I learned:
+1. Data is messy— most of my time was spent cleaning, not querying
+2. Business context matters — knowing 'why' a metric matters makes queries better
+3. SQL is enough for real insights — you don't always need Python or ML
