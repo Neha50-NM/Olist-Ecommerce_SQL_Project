@@ -1,7 +1,6 @@
 -- ============================================
 -- 📊 BUSINESS ANALYSIS & INSIGHTS
 -- ============================================
--- Author: Meraj Sheikh
 -- Description:
 -- This script generates business insights from the
 -- cleaned e-commerce dataset.
