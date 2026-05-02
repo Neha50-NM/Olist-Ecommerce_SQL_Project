@@ -1,7 +1,6 @@
 -- ============================================
 -- 🛒 OLIST E-COMMERCE DATABASE SCHEMA (RAW LAYER)
 -- ============================================
--- Author: Meraj Sheikh
 -- Description:
 -- This script creates the database and RAW tables.
 -- Data types are kept flexible (TEXT) to allow ingestion
