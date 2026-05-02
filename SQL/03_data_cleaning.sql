@@ -1,7 +1,6 @@
 -- ============================================
 -- 🧹 DATA CLEANING & TRANSFORMATION LAYER
 -- ============================================
--- Author: Meraj Sheikh
 -- Description:
 -- This script converts raw data into structured format.
 -- It handles NULLs, fixes data types, enforces constraints,
